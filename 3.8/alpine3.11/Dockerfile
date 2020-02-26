@@ -36,6 +36,8 @@ RUN set -ex \
 	&& mkdir -p /usr/src/python \
 	&& tar -xJC /usr/src/python --strip-components=1 -f python.tar.xz \
 	&& rm python.tar.xz \
+	&& rm -f /usr/src/python/Lib/distutils/command/wininst-*.exe \
+        && rm -f /usr/local/lib/python3.8/distutils/command/wininst-*.exe \
 	\
 	&& apk add --no-cache --virtual .build-deps  \
 		bluez-dev \
